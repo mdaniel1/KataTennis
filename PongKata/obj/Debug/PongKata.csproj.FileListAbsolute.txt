@@ -1,0 +1,10 @@
+C:\Users\Nenoxx\source\repos\PongKata\PongKata\bin\Debug\PongKata.exe.config
+C:\Users\Nenoxx\source\repos\PongKata\PongKata\bin\Debug\PongKata.exe
+C:\Users\Nenoxx\source\repos\PongKata\PongKata\bin\Debug\PongKata.pdb
+C:\Users\Nenoxx\source\repos\PongKata\PongKata\obj\Debug\PongKata.csprojAssemblyReference.cache
+C:\Users\Nenoxx\source\repos\PongKata\PongKata\obj\Debug\PongKata.PongKataForm.resources
+C:\Users\Nenoxx\source\repos\PongKata\PongKata\obj\Debug\PongKata.Properties.Resources.resources
+C:\Users\Nenoxx\source\repos\PongKata\PongKata\obj\Debug\PongKata.csproj.GenerateResource.cache
+C:\Users\Nenoxx\source\repos\PongKata\PongKata\obj\Debug\PongKata.csproj.CoreCompileInputs.cache
+C:\Users\Nenoxx\source\repos\PongKata\PongKata\obj\Debug\PongKata.exe
+C:\Users\Nenoxx\source\repos\PongKata\PongKata\obj\Debug\PongKata.pdb
