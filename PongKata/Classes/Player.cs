@@ -15,16 +15,12 @@ namespace PongKata.Classes
         public int acceleration { get; set; }
         public PictureBox paddle { get; set; }
 
-        public Player()
+        public Player(PictureBox paddle)
         {
             goingUp = false;
             goingDown = false;
             acceleration = 0;
             paddle = null;
-        }
-
-        public Player(PictureBox paddle)
-        {
             this.paddle = paddle;
         }
 

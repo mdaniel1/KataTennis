@@ -22,6 +22,7 @@ namespace PongKata
 
         Player player1; 
         Player player2;
+        Ball ball;
         #endregion
 
         public PongKataForm()
@@ -29,6 +30,7 @@ namespace PongKata
             InitializeComponent();
             player1 = new Player(pbPaddleP1);
             player2 = new Player(pbPaddleP2);
+            ball = new Ball(pbBall);
         }
 
         private void Timer_Tick(object sender, EventArgs e)
