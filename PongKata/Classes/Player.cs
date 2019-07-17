@@ -8,20 +8,29 @@ using System.Windows.Forms;
 
 namespace PongKata.Classes
 {
-    class Player
+    public class Player
     {
         public bool goingUp { get; set; }
         public bool goingDown { get; set; }
         public int acceleration { get; set; }
         public PictureBox paddle { get; set; }
+        public string currentScore { get; set; }
+        public int setsWon { get; set; }
+        private Label scoreLabel;
+        private Label setsLabel;
 
-        public Player(PictureBox paddle)
+        public Player(PictureBox paddle, Label scoreLabel, Label setsLabel)
         {
             goingUp = false;
             goingDown = false;
             acceleration = 0;
-            paddle = null;
             this.paddle = paddle;
+            currentScore = "0";
+            setsWon = 0;
+            this.scoreLabel = scoreLabel;
+            this.setsLabel = setsLabel;
+            this.setsLabel.Text = "0";
+            this.scoreLabel.Text = "0";
         }
 
         public void processMovePaddle()
@@ -63,6 +72,16 @@ namespace PongKata.Classes
                     Math.Min(PongKataForm.BOTTOM_WINDOW_LOCATION, paddle.Location.Y + movementSpeed))
                     );
             }
+        }
+
+        public void updateScore()
+        {
+            scoreLabel.Text = currentScore;
+        }
+
+        public void updateSetsWon()
+        {
+            setsLabel.Text = setsWon.ToString();
         }
     }
 }

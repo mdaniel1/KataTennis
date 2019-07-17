@@ -28,8 +28,8 @@ namespace PongKata
         public PongKataForm()
         {
             InitializeComponent();
-            player1 = new Player(pbPaddleP1);
-            player2 = new Player(pbPaddleP2);
+            player1 = new Player(pbPaddleP1, currentScoreP1Label, setsWonP1Label);
+            player2 = new Player(pbPaddleP2, currentScoreP2Label, setsWonP2Label);
             ball = new Ball(pbBall);
         }
 
@@ -37,6 +37,7 @@ namespace PongKata
         {
             player1.processMovePaddle();
             player2.processMovePaddle();
+            ball.processMoveBall(player1, player2);
         }
 
         private void PongKataForm_KeyDown(object sender, KeyEventArgs e)
