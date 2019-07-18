@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PongKataForm));
             this.pbPaddleP1 = new System.Windows.Forms.PictureBox();
             this.pbPaddleP2 = new System.Windows.Forms.PictureBox();
             this.pbBall = new System.Windows.Forms.PictureBox();
@@ -51,7 +50,7 @@
             // 
             // pbPaddleP1
             // 
-            this.pbPaddleP1.Image = ((System.Drawing.Image)(resources.GetObject("pbPaddleP1.Image")));
+            this.pbPaddleP1.Image = global::PongKata.Properties.Resources.pongPaddle1;
             this.pbPaddleP1.Location = new System.Drawing.Point(12, 228);
             this.pbPaddleP1.Name = "pbPaddleP1";
             this.pbPaddleP1.Size = new System.Drawing.Size(21, 144);
@@ -60,7 +59,7 @@
             // 
             // pbPaddleP2
             // 
-            this.pbPaddleP2.Image = ((System.Drawing.Image)(resources.GetObject("pbPaddleP2.Image")));
+            this.pbPaddleP2.Image = global::PongKata.Properties.Resources.pongPaddle1;
             this.pbPaddleP2.Location = new System.Drawing.Point(1231, 228);
             this.pbPaddleP2.Name = "pbPaddleP2";
             this.pbPaddleP2.Size = new System.Drawing.Size(21, 144);
@@ -69,10 +68,10 @@
             // 
             // pbBall
             // 
-            this.pbBall.Image = ((System.Drawing.Image)(resources.GetObject("pbBall.Image")));
+            this.pbBall.Image = global::PongKata.Properties.Resources.pongBall1;
             this.pbBall.Location = new System.Drawing.Point(620, 330);
             this.pbBall.Name = "pbBall";
-            this.pbBall.Size = new System.Drawing.Size(23, 23);
+            this.pbBall.Size = new System.Drawing.Size(20, 20);
             this.pbBall.TabIndex = 2;
             this.pbBall.TabStop = false;
             // 
