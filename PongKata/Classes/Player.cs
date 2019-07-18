@@ -16,10 +16,10 @@ namespace PongKata.Classes
         public PictureBox paddle { get; set; }
         public string currentScore { get; set; }
         public int setsWon { get; set; }
-        private Label scoreLabel;
-        private Label setsLabel;
+        public PongInfoHandler pih { get; set; }
+        public bool winner { get; set; }
 
-        public Player(PictureBox paddle, Label scoreLabel, Label setsLabel)
+        public Player(PictureBox paddle)
         {
             goingUp = false;
             goingDown = false;
@@ -27,10 +27,7 @@ namespace PongKata.Classes
             this.paddle = paddle;
             currentScore = "0";
             setsWon = 0;
-            this.scoreLabel = scoreLabel;
-            this.setsLabel = setsLabel;
-            this.setsLabel.Text = "0";
-            this.scoreLabel.Text = "0";
+            winner = false;
         }
 
         public void processMovePaddle()
@@ -72,16 +69,6 @@ namespace PongKata.Classes
                     Math.Min(PongKataForm.BOTTOM_WINDOW_LOCATION, paddle.Location.Y + movementSpeed))
                     );
             }
-        }
-
-        public void updateScore()
-        {
-            scoreLabel.Text = currentScore;
-        }
-
-        public void updateSetsWon()
-        {
-            setsLabel.Text = setsWon.ToString();
         }
     }
 }

@@ -42,6 +42,8 @@
             this.currentScoreP1Label = new System.Windows.Forms.Label();
             this.separationBar2Label = new System.Windows.Forms.Label();
             this.currentScoreP2Label = new System.Windows.Forms.Label();
+            this.startButton = new System.Windows.Forms.Button();
+            this.winnerLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPaddleP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPaddleP2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBall)).BeginInit();
@@ -70,7 +72,7 @@
             this.pbBall.Image = ((System.Drawing.Image)(resources.GetObject("pbBall.Image")));
             this.pbBall.Location = new System.Drawing.Point(620, 330);
             this.pbBall.Name = "pbBall";
-            this.pbBall.Size = new System.Drawing.Size(22, 22);
+            this.pbBall.Size = new System.Drawing.Size(23, 23);
             this.pbBall.TabIndex = 2;
             this.pbBall.TabStop = false;
             // 
@@ -168,12 +170,36 @@
             this.currentScoreP2Label.TabIndex = 10;
             this.currentScoreP2Label.Text = "Adv.";
             // 
+            // startButton
+            // 
+            this.startButton.Font = new System.Drawing.Font("Impact", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startButton.Location = new System.Drawing.Point(565, 610);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(101, 41);
+            this.startButton.TabIndex = 11;
+            this.startButton.Text = "START";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            // 
+            // winnerLabel
+            // 
+            this.winnerLabel.AutoSize = true;
+            this.winnerLabel.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.winnerLabel.ForeColor = System.Drawing.Color.Snow;
+            this.winnerLabel.Location = new System.Drawing.Point(560, 61);
+            this.winnerLabel.Name = "winnerLabel";
+            this.winnerLabel.Size = new System.Drawing.Size(60, 25);
+            this.winnerLabel.TabIndex = 12;
+            this.winnerLabel.Text = "label1";
+            // 
             // PongKataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.winnerLabel);
+            this.Controls.Add(this.startButton);
             this.Controls.Add(this.currentScoreP2Label);
             this.Controls.Add(this.separationBar2Label);
             this.Controls.Add(this.currentScoreP1Label);
@@ -215,6 +241,8 @@
         private System.Windows.Forms.Label currentScoreP1Label;
         private System.Windows.Forms.Label separationBar2Label;
         private System.Windows.Forms.Label currentScoreP2Label;
+        private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Label winnerLabel;
     }
 }
 

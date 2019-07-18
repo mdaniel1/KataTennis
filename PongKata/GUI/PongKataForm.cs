@@ -23,21 +23,28 @@ namespace PongKata
         Player player1; 
         Player player2;
         Ball ball;
+        PongInfoHandler pih;
         #endregion
 
         public PongKataForm()
         {
             InitializeComponent();
-            player1 = new Player(pbPaddleP1, currentScoreP1Label, setsWonP1Label);
-            player2 = new Player(pbPaddleP2, currentScoreP2Label, setsWonP2Label);
-            ball = new Ball(pbBall);
+            player1 = new Player(pbPaddleP1);
+            player2 = new Player(pbPaddleP2);
+            ball = new Ball(pbBall, player1, player2);
+            Timer.Enabled = false;
+            winnerLabel.Text = "";
+            pih = new PongInfoHandler(currentScoreP1Label, setsWonP1Label, currentScoreP2Label, setsWonP2Label, winnerLabel, startButton, player1, player2, ball, Timer);
+            player1.pih = pih;
+            player2.pih = pih;
+            ball.pih = pih;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             player1.processMovePaddle();
             player2.processMovePaddle();
-            ball.processMoveBall(player1, player2);
+            ball.processMoveBall();
         }
 
         private void PongKataForm_KeyDown(object sender, KeyEventArgs e)
@@ -89,6 +96,14 @@ namespace PongKata
                     }
                     break;
             }
+        }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            winnerLabel.Text = "";
+            Timer.Enabled = true;
+            startButton.Visible = false;
+            this.ActiveControl = null; //Prevents the button from keeping the focus.
         }
     }
 }

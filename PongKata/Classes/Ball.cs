@@ -1,6 +1,7 @@
 ﻿using PongKata.Classes;
 using System;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace PongKata
@@ -9,24 +10,31 @@ namespace PongKata
     {
         public const int BALL_DEFAULT_X_LOCATION = 620;
         public const int BALL_DEFAULT_Y_LOCATION = 330;
-        public const int BALL_DEFAULT_X_SPEED = -4;
-        public const int BALL_DEFAULT_Y_SPEED = 4;
+        public const int BALL_DEFAULT_X_SPEED = -2;
+        public const int BALL_DEFAULT_Y_SPEED = 2;
         public const int BALL_BOTTOM_WINDOW_LOCATION = 658;
         public const int BALL_LEFT_WINDOW_LOCATION = 0;
         public const int BALL_RIGHT_WINDOW_LOCATION = 1280;
+        public const int SETS_WON_TO_WIN = 6;
+
         Random rng = new Random();
         private PictureBox ball;
-        int xSpeed;
-        int ySpeed;
+        public int xSpeed;
+        public int ySpeed;
+        public Player player1;
+        public Player player2;
+        public PongInfoHandler pih;
 
-        public Ball(PictureBox ball)
+        public Ball(PictureBox ball, Player player1, Player player2)
         {
             this.ball = ball;
             xSpeed = BALL_DEFAULT_X_SPEED;
             ySpeed = BALL_DEFAULT_Y_SPEED;
+            this.player1 = player1;
+            this.player2 = player2;
         }
 
-        public void processMoveBall(Player player1, Player player2)
+        public void processMoveBall()
         {
             ball.Location = new Point(ball.Location.X + xSpeed,
                 Math.Max(PongKataForm.TOP_WINDOW_LOCATION, 
@@ -80,30 +88,34 @@ namespace PongKata
                     else
                     {
                         playerWhoScored.setsWon++;
+                        if (playerWhoScored.setsWon == SETS_WON_TO_WIN)
+                            playerWhoScored.winner = true;
                         playerWhoScored.currentScore = "0";
                         otherPlayer.currentScore = "0";
                     }
                     break;
                 case "Adv.":
                     playerWhoScored.setsWon++;
+                    if (playerWhoScored.setsWon == SETS_WON_TO_WIN)
+                        playerWhoScored.winner = true;
                     playerWhoScored.currentScore = "0";
                     otherPlayer.currentScore = "0";
                     break;
             }
 
-            playerWhoScored.updateScore();
-            playerWhoScored.updateSetsWon();
-            otherPlayer.updateScore();
-            otherPlayer.updateSetsWon();
+            pih.updateScore();
+            pih.updateSetsWon();
+
+            pih.checkWinner();
         }
 
-        private void resetBall()
+        internal void resetBall()
         {
             do
             {
-                ySpeed = rng.Next(-2, 3);
-                xSpeed = rng.Next(-2, 3);
-            } while (ySpeed == 0 || xSpeed == 0);
+                ySpeed = rng.Next(-3, 3);
+                xSpeed = rng.Next(-3, 3);
+            } while ((ySpeed >= -1 && ySpeed <= 1) || (xSpeed >= -1 && xSpeed <= 1));
             
             ball.Location = new Point(BALL_DEFAULT_X_LOCATION, BALL_DEFAULT_Y_LOCATION);
         }
