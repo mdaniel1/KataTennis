@@ -1,5 +1,9 @@
 This is a simple Pong game for two players.
 
+## Compiling
+
+Clone or download this repository, then open the `PongKata.sln` solution file and simply run the application with F5
+
 ## Controls
 P to pause the game
 
