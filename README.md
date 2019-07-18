@@ -1,4 +1,4 @@
-This is a simple Pong game with two players.
+This is a simple Pong game for two players.
 
 ## Controls
 P to pause the game
