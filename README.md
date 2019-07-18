@@ -3,15 +3,15 @@ This is a simple Pong game for two players.
 ## Controls
 P to pause the game
 
-### player 1
-* Z to move UP
-* S to move DOWN
-* Left shift to move faster
+### player 1 (Paddle on the left side)
+* **Z** to move UP
+* **S** to move DOWN
+* **Left shift** to move faster
 
-### player 2
-* Up arrow to move UP
-* Down arrow to move DOWN
-* Numpad0 to move faster
+### player 2 (Paddle on the right side)
+* **Up** arrow to move UP
+* **Down** arrow to move DOWN
+* **Numpad0** to move faster
 
 ## Scoring
 
