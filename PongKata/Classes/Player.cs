@@ -35,7 +35,9 @@ namespace PongKata.Classes
             bool? paddleGoingUp = null; //null means the paddle is not moving
 
             if (goingUp)
+            {
                 paddleGoingUp = true;
+            }
 
             if (goingDown)
             {

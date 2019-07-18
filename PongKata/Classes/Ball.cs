@@ -89,7 +89,9 @@ namespace PongKata
                     {
                         playerWhoScored.setsWon++;
                         if (playerWhoScored.setsWon == SETS_WON_TO_WIN)
+                        {
                             playerWhoScored.winner = true;
+                        }
                         playerWhoScored.currentScore = "0";
                         otherPlayer.currentScore = "0";
                     }
@@ -97,7 +99,9 @@ namespace PongKata
                 case "Adv.":
                     playerWhoScored.setsWon++;
                     if (playerWhoScored.setsWon == SETS_WON_TO_WIN)
+                    {
                         playerWhoScored.winner = true;
+                    }
                     playerWhoScored.currentScore = "0";
                     otherPlayer.currentScore = "0";
                     break;
@@ -124,15 +128,23 @@ namespace PongKata
         {
             ySpeed *= -1;
             if (ySpeed < 0)
+            {
                 ySpeed = rng.Next(ySpeed - 2, ySpeed);
+            }
             else
+            {
                 ySpeed = rng.Next(ySpeed, ySpeed + 2);
+            }
 
             xSpeed *= -1;
             if (xSpeed < 0)
+            {
                 xSpeed = rng.Next(xSpeed - 2, xSpeed);
+            }
             else
+            {
                 xSpeed = rng.Next(xSpeed, xSpeed + 2);
+            }
         }
 
         private void BounceVertical()

@@ -79,10 +79,13 @@ namespace PongKata.Classes
         {
             if (player1.winner || player2.winner)
             {
-                if(player1.winner)
+                if (player1.winner)
+                {
                     winnerLabel.Text = "Player 1 won !";
-                else
+                }
+                else{
                     winnerLabel.Text = "Player 2 won !";
+                }
 
                 startButton.Enabled = true;
                 startButton.Visible = true;
