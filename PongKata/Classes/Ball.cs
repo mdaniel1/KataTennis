@@ -19,11 +19,13 @@ namespace PongKata
 
         Random rng = new Random();
         private PictureBox ball;
-        public int xSpeed;
-        public int ySpeed;
-        public Player player1;
-        public Player player2;
-        public PongInfoHandler pih;
+        public int xSpeed { get; set; }
+        public int ySpeed { get; set; }
+        public int previousXSpeed { get; set; }
+        public int previousYSpeed { get; set; }
+        public Player player1 { get; set; }
+        public Player player2 { get; set; }
+        public PongInfoHandler pih { get; set; }
 
         public Ball(PictureBox ball, Player player1, Player player2)
         {

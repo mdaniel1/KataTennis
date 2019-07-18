@@ -24,6 +24,7 @@ namespace PongKata
         Player player2;
         Ball ball;
         PongInfoHandler pih;
+        bool isGamePaused = false;
         #endregion
 
         public PongKataForm()
@@ -93,6 +94,23 @@ namespace PongKata
                     else
                     {
                         player2.acceleration = 0;
+                    }
+                    break;
+                case Keys.P:
+                    if (isKeyPressed)
+                    {
+                        if (!isGamePaused)
+                        {
+                            Timer.Enabled = false;
+                            this.Text = "Pong Kata (PAUSED)";
+                            isGamePaused = true;
+                        }
+                        else
+                        {
+                            Timer.Enabled = true;
+                            this.Text = "Pong Kata";
+                            isGamePaused = false;
+                        }
                     }
                     break;
             }
